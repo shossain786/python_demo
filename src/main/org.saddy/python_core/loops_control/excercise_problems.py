@@ -27,11 +27,42 @@ def palindromeNumber():
     else:
         print(original_num, 'is not Palindrome')
 
+#! e: Write a program to find the factorial value of any nubmer entered through the keyboard
+
+def print_factorial():
+    number = int(input('Enter a number: '))
+    result = 1
+    while number > 0 : 
+        result  *= number
+        number -= 1
+    print('Factorial value is: ', result)
+
+#! f: Write a program to print out all Armstrong numbers between 1 and 500. If sum of cubes of each 
+#! digits is equal to the number itself. Then the number is called Armstrong numer.
+#! For example: 153 is Armstrong number as 153  = (1*1*1) + (5*5*5) + (3*3*3)
+def check_armstrong_number():
+    final_number = 0
+    i = 1
+    for i in range(1,501):
+        num = i
+        while num > 0:
+            reminder = num % 10
+            final_number += reminder*reminder*reminder
+            num //= 10
+        
+        if i == final_number:
+            print("ArmStrong Number: ", i)
+        i += 1
+        final_number = 0
+        
+
 def main():
     # alphabets, digits = count_alphabets_and_digits('Pune-411048')
     # print("Number of alphabets:", alphabets)
     # print("Number of digits:", digits)
-    palindromeNumber()
+    # palindromeNumber()
+    # print_factorial()
+    check_armstrong_number()
 
 if __name__ == "__main__":
     main()
