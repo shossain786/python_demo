@@ -54,7 +54,40 @@ def check_armstrong_number():
             print("ArmStrong Number: ", i)
         i += 1
         final_number = 0
+
+#! g: Write a program to print all prime numbers from 1 to 300 and print the number of prime numbers
+def print_prime_numbers():
+    count = 0
+    for number in range(1, 301):
+        prime = True
+        divider = 2
+        if number <= 2:
+            continue
         
+        while divider <= number // 2:
+            if number % divider == 0:
+                prime = False
+                break
+            divider += 1
+            
+        if prime == True:
+            print(number, 'is Prime')
+            count += 1
+    
+    print('Total number of prime is: ', count)
+    print('End of the program.')
+    
+#! h: Write a program to print the multiplication number of the number entered by the user. The table should get displayed
+#! in the following form:
+#! 29 * 1 = 29
+#! 29 * 2 = 58
+#! ..
+def print_multiplication_number():
+    number = int(input('Enter a number: '))
+    
+    for i in range(1, 11):
+        result = number * i
+        print(F'{number} * {i} = {result}') #! F' is indicating formated String. We can use f' also
 
 def main():
     # alphabets, digits = count_alphabets_and_digits('Pune-411048')
@@ -62,7 +95,9 @@ def main():
     # print("Number of digits:", digits)
     # palindromeNumber()
     # print_factorial()
-    check_armstrong_number()
+    # check_armstrong_number()
+    # print_prime_numbers()
+    print_multiplication_number()
 
 if __name__ == "__main__":
     main()
